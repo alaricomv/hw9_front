@@ -1,0 +1,62 @@
+<div> 
+        
+  <label class="container"> 
+       <b> Estado </b>
+         
+       <select  name="selectedEstado" id="selectedEstado" [(ngModel)]="selectedEstado" (change)="changeEstado();">
+        <option *ngFor="let edo of arrEstados; let i = index" [value]="edo.idestado">
+          {{edo.estado}}
+        </option>
+      </select>
+     
+       <b> Municipio </b>
+       <select  name="selectedMunicipio" id="selectedMunicipio" [(ngModel)]="selectedMunicipio" (change)="changeMunicipio()">
+        <option *ngFor="let mun of arrMunicipios; let i = index" [value]="mun.idmunicipio">
+          {{mun.municipio}}
+        </option>
+      </select>
+
+      
+       <b> Unidad Economica </b>
+       <select  name="selectedUnidad" id="selectedUnidad" [(ngModel)]="selectedUnidad">
+        <option *ngFor="let uni of arrActividades; let i = index" [value]="uni.tipo">
+          {{uni.descripcion}}
+        </option>
+      </select>
+      {{selectedUnidad}}
+
+
+      <b> Escuelas </b>
+       <select  name="selectedEscuela" id="selectedEscuela" [(ngModel)]="selectedEscuela">
+        <option *ngFor="let esc of arrEscuelas; let i = index" [value]="esc.tipo">
+          {{esc.descripcion}}
+        </option>
+      </select>
+
+      <b> Comercios </b>
+       <select  name="selectedComercio" id="selectedComercio" [(ngModel)]="selectedComercio">
+        <option *ngFor="let com of arrComercio; let i = index" [value]="com.tipo">
+          {{com.descripcion}}
+        </option>
+      </select>
+
+      <b> Hospitales </b>
+       <select  name="selectedHospital" id="selectedHospital" [(ngModel)]="selectedHospital">
+        <option *ngFor="let hosp of arrHospitales; let i = index" [value]="hosp.tipo">
+          {{hosp.descripcion}}
+        </option>
+      </select>
+      
+      <button (click)="buscarDenues()" type=”button”>Buscar</button>
+
+</label>
+</div>
+
+<div class= "container">
+  <br>
+</div>
+<div class="map-container">
+  <div class="map-frame">
+    <div id="map"></div>
+  </div>
+</div>
